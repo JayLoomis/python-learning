@@ -32,4 +32,22 @@ Let's break that down:
 
 =   `myString` is the string to search.
 
+## argparse ##
+The argparse module is an abstraction of C-style command line arguments for Python
+
+### What does it do? ###
+
+The argparse module provides functionality that enables you to use command-line arguments with your Python scripts. As part of its processing, argparse gives you two other things for free: automatically generated help strings (including the automatic inclusion of -h and --help args) and argument validation and error handling. If a user enters a problematic argument, argparse automatically aborts your script and displays its usage to the user.
+
+### The very basics ###
+
+To use argparse, you must `import argparse`.
+
+You then instantiate the parser and give your script a description that will be displayed when the user sees help text.
+
+```python
+parser = argparse.ArgumentParser(description="Does something " +
+          "interesting")
+```
+
 ----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
