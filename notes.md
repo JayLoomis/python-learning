@@ -49,5 +49,6 @@ You then instantiate the parser and give your script a description that will be 
 parser = argparse.ArgumentParser(description="Does something " +
           "interesting")
 ```
-
+<!--
 ----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+-->
