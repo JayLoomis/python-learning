@@ -49,6 +49,40 @@ You then instantiate the parser and give your script a description that will be 
 parser = argparse.ArgumentParser(description="Does something " +
           "interesting")
 ```
+
+## List comprehensions ##
+List comprehensions are essentially queries into lists. It's a syntaxt that 
+equates to a new list contianing the item from an existing list (or lists).
+
+A really simple use is to make a list out of one item in each of a list of 
+tuples:
+
+```python
+# Here's a list of tuples, each containing a string, an int, and a float.
+myList = [('something', 35, 65.3), 
+          ('another thing', 98, 103.9), 
+          ('yet another thing', 61, 341.0)]
+
+# Let's use list comprehensions to make a list of just the ints.
+ints_in_myList = [entry[1] for entry in myList]
+```
+But you can do much more complicated things with them!
+
+Let's say I want to make a list of all of the names in one list that are not in 
+another list:
+
+```python
+# Here's the first list of names
+names1 = ['John', 'William', 'Francis', 'Robert']
+
+# And the second
+names2 = ['Francis', 'Robert', 'Harold', 'Egbert']
+
+# Now let's find every name in the second list that's not in the first!
+2not1 = [name for name in names2 if name not in names1]
+```
+
+
 <!--
 ----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
 -->
