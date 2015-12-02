@@ -37,17 +37,75 @@ The argparse module is an abstraction of C-style command line arguments for Pyth
 
 ### What does it do? ###
 
-The argparse module provides functionality that enables you to use command-line arguments with your Python scripts. As part of its processing, argparse gives you two other things for free: automatically generated help strings (including the automatic inclusion of -h and --help args) and argument validation and error handling. If a user enters a problematic argument, argparse automatically aborts your script and displays its usage to the user.
+The argparse module provides functionality that enables you to use command-line
+arguments with your Python scripts. As part of its processing, argparse gives you
+two other things for free: automatically generated help strings (including the 
+automatic inclusion of -h and --help args) and argument validation and error 
+handling. If a user enters a problematic argument, argparse automatically aborts 
+your script and displays its usage to the user.
 
 ### The very basics ###
 
+#### Step 1: Make sure to import the module! ####
 To use argparse, you must `import argparse`.
 
-You then instantiate the parser and give your script a description that will be displayed when the user sees help text.
+#### Step 2: Create your argument parser ####
+You then instantiate the parser and give your script a description that will be
+displayed when the user sees help text.
 
 ```python
 parser = argparse.ArgumentParser(description="Does something " +
           "interesting")
+```
+#### Step 3: Define your arguments ####
+You can define arguments in one of two ways: positional and optional.
+
+Positional arguments are required and must be specified in the order defined. 
+All you need to define them is an identifier name so that you can access them in
+the parsed arguments object.
+
+Optional arguments are, well, optional. They are also defined by the options, or
+switches, that you use to specify them.
+
+Here's what it looks like to invoke a script with two positional and two 
+optional arguments:
+
+```bash
+$ myscript.py positional1 -o optional1 positional2 -t optional2
+```
+In both cases, you use `add_argument` to define an argument.
+
+```python
+parser.add_argument('apositionalarg', help='This positional argument is required')
+parser.add_argument('-o', '--output', dest='output', default='regular',
+                    help='Specifies the kind of output to use.')
+parser.add_argument('-v', '--verbose', action='store_true', dest='verbose',
+                    help='If set, causes the script to print detailed status.')
+```
+There are many other options for defining arguments, but these basic ones should
+be enough to get you going in most simple cases.
+
+#### Step 4: Parse the arguments ####
+Because Python is interpreted, the arguments have been stored away waiting while
+you've been describing them. Now you need to actually parse the arg string into 
+an arguments object.
+
+```python
+args = parser.parse_args()
+```
+You can specify a list of args to parse, but under most circumstances you'll 
+want to parse them all. Provided nothing bad happened, you should now have an 
+object containing the values associated with all the arguments you defined.
+
+#### Step 5: Use the arguments in your script! ####
+The arguments object you got in step 4 has members for every parsed argument. 
+The name of each member is either the name of the argument, or the value you 
+used for `dest` in your definition.
+
+```python
+someVariable = args.apositionalarg
+if output != True:
+    doSomethingImportant()
 ```
 
 ## List comprehensions ##
