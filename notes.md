@@ -137,9 +137,8 @@ names1 = ['John', 'William', 'Francis', 'Robert']
 names2 = ['Francis', 'Robert', 'Harold', 'Egbert']
 
 # Now let's find every name in the second list that's not in the first!
-2not1 = [name for name in names2 if name not in names1]
+names2exclusive = [name for name in names2 if name not in names1]
 ```
-
 
 <!--
 ----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
