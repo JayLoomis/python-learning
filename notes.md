@@ -1,5 +1,26 @@
 # Python quick notes #
 
+## Operators ##
+
+### Mathematical ##
+
+These are as you'd expect, including the C-style modulo (`%`).
+
+Except that 'raise to the power of' is `**` not `^`.
+
+There's also 'interger divide' (`//`) which returns an integer without remainder. This is always needed to get such a result in 3.x, but is the default behavior for `/` in 2.x. However, you can get 3.x-style behavior in 2.x by using:
+
+```python
+from __future__ import division
+```
+### Logical ###
+
+```python
+logicand = x and y
+logicor  = x or y
+logicneg = x not y
+```
+
 ## Regular expressions ##
 
 All functionality is included in:
