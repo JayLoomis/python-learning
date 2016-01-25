@@ -8,7 +8,10 @@ These are as you'd expect, including the C-style modulo (`%`).
 
 Except that 'raise to the power of' is `**` not `^`.
 
-There's also 'interger divide' (`//`) which returns an integer without remainder. This is always needed to get such a result in 3.x, but is the default behavior for `/` in 2.x. However, you can get 3.x-style behavior in 2.x by using:
+There's also 'interger divide' (`//`) which returns an integer without 
+remainder. This is always needed to get such a result in 3.x, but is the default
+behavior for `/` in 2.x. However, you can get 3.x-style behavior in 2.x by 
+using:
 
 ```python
 from __future__ import division
@@ -20,7 +23,60 @@ logicand = x and y
 logicor  = x or y
 logicneg = x not y
 ```
+## Control structures ##
 
+### if, etc. ###
+
+```python
+if x == y:
+    # do a thing
+elif x > y:
+    # do another thing
+else:
+    # do the default thing
+```
+
+Note that `pass` is a keyword that you can use if you want to set up a code
+branch that doesn't do anything yet. The example above, with only comments in 
+each branch, would cause errors.
+
+Sadly, there is no case statement. Just use multiple `elif` clauses to do what
+you need to.
+
+### Loops ###
+
+```python
+while x > y:
+    x -= 1
+```
+
+and
+
+```python
+for var in interable:
+    # do something with var
+```
+
+You can also use an `else` clause at the end of any loop to catch instances 
+where the condition is not met even once.
+
+A very common for loop is to do something a number of times, where the number of
+iterations is not based on the number of items in a list:
+
+```python
+times = int(input('Enter a number of time to print spam: ')
+
+for n in range(times):
+    print('spam')
+```
+
+Note that the `range` function essentially returns a list of integers from 0 to
+one less than the max value you pass to it. That's really important if you want 
+to do something with the iteration variable.
+
+<!--
+----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+-->
 ## Regular expressions ##
 
 All functionality is included in:
