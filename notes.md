@@ -53,7 +53,7 @@ while x > y:
 and
 
 ```python
-for var in interable:
+for var in iterable:
     # do something with var
 ```
 
@@ -107,7 +107,7 @@ Let's break that down:
     
 -   `' '` is just the single space to substitute for what we find.
 
-=   `myString` is the string to search.
+-   `myString` is the string to search.
 
 ## argparse ##
 The argparse module is an abstraction of C-style command line arguments for Python
