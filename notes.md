@@ -93,7 +93,7 @@ operations. Python supports both `set` and `frozenset`, the the latter of which
 is identical to the first except it is immutable, and doesn't support the 
 dynamic methods.
 
-```pyython
+```python
 topfivegames = {'Monsterhearts', 'Apocalypse World', 'Dungeon World', 
                 'Kagematsu', 'Danger Patrol Alpha'}
                 
