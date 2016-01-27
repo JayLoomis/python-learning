@@ -86,7 +86,49 @@ to do something with the iteration variable.
 <!--
 ----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
 -->
+## Sets ##
 
+A set is a special kind of collection that you can use for set comparison 
+operations. Python supports both `set` and `frozenset`, the the latter of which 
+is identical to the first except it is immutable, and doesn't support the 
+dynamic methods.
+
+```pyython
+topfivegames = {'Monsterhearts', 'Apocalypse World', 'Dungeon World', 
+                'Kagematsu', 'Danger Patrol Alpha'}
+                
+pbta = {'Monsterhearts', 'Apocalypse World', 'Urban Shadows', 
+        'Sagas of the Icelanders', 'Dungeon World'}
+        
+# And
+topfivegames & pbta # {'Monsterhearts', 'Apocalypse World', 'Dungeon World'}
+
+# Or
+topfivegames | pbta # {'Kagematsu', 'Danger Patrol Alpha', 'Urban Shadows', 
+                    #  'Monsterhearts', 'Apocalypse World',
+                    #  'Sagas of the Icelanders', 'Danger Patrol Alpha'}
+                    
+# XOr
+topfivegames ^ pbta # {'Kagematsu', 'Danger Patrol Alpha',
+                    #  'Sagas of the Icelanders', 'Danger Patrol Alpha'}
+                    
+# In A, but not in B
+topfivegames - pbta # {'Kagematsu', 'Danger Patrol Alpha'}
+```
+
+Membership testing (`in` and `not in`) is the primary boolean operation on sets.
+
+**Gotcha** You can't use empty brackets to make an empty set the way you can 
+with other collectioon types. That's becuase `{}` is interpreted as an empty 
+dictionary. Instead, you create an empty set with the `set` constructor:
+
+```python
+newset = set()
+```
+
+<!--
+----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+-->
 ## Multiple assignment ##
 
 It isn't always how you might think it will work.
