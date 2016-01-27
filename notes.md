@@ -16,6 +16,15 @@ using:
 ```python
 from __future__ import division
 ```
+### Relational ###
+
+```python
+x > y
+x < y
+x == y
+X != y
+```
+
 ### Logical ###
 
 ```python
@@ -77,6 +86,21 @@ to do something with the iteration variable.
 <!--
 ----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
 -->
+
+## Multiple assignment ##
+
+It isn't always how you might think it will work.
+
+```python
+x = 2
+y = 4
+
+x, y = y, x + y
+
+x == 4
+y == 6
+```
+
 ## Regular expressions ##
 
 All functionality is included in:
