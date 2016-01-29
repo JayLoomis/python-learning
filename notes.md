@@ -125,6 +125,49 @@ dictionary. Instead, you create an empty set with the `set` constructor:
 ```python
 newset = set()
 ```
+## Lists ##
+
+More or less the default collection type in Python. Mutable, ordered, but slower
+than a tuple.
+
+```python
+mylist = []
+mylist.append('thing1')
+mylist.append('thing2')
+mylist.extend(['thing3', 'thing4', 'thing5'])
+
+# Or we could create the list with everything in it:
+mylist = ['thing1', 'thing2', 'thing3', 'thing4', 'thing5']
+```
+
+For reasons that are somewhat opaque, assigning a list to another list is by
+reference. This can be annoying if you forget:
+
+```python
+animals = ['ant', 'wolverine', 'bat', 'crocodile', 'penguin', 'cat']
+
+mammals = animals
+mammals.remove('ant')
+mammals.remove('crocodile')
+mammals.remove('penguin')
+
+print(animals)
+# ['wolverine', 'bat', 'cat'] uh oh! We changed the parent list!
+```
+
+There are a couple of ways around this:
+
+```python
+regional = [206, 425, 253, 360]
+
+metro = regional[:]
+# OR
+metro.extend(regional)
+
+metro.remove(360)
+metro.remove(253)
+```
+
 
 <!--
 ----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
