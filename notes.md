@@ -168,6 +168,57 @@ metro.remove(360)
 metro.remove(253)
 ```
 
+## Dictionaries ##
+
+Unordered key-value pairs
+
+```python
+colors = {'red': (255, 0, 0), 'green': (0, 255, 0), 'blue': (0, 0, 255)}
+
+# Get an entry by key name:
+print(colors['red'])
+
+# Add a new entry:
+colors['cyan'] = (0, 255, 255)
+colors['lime'] = (128, 255, 0)
+
+# Delete individual entries:
+del(colors['lime'])
+
+# Get a list of the keys in the dictionary:
+print colors.keys()
+
+# Looping through all is easy:
+for color in colors:
+    print('{}: {}'.format(color, colors[color]))
+
+# Membership checking:
+if 'lime' not in colors:
+    print('Oh, yeah, we deleted that!')
+```
+
+Trying to access a key that doesn't exist results in a `KeyError` exception.
+
+Even though dictionaries are unsorted, you can get a list of the keys sorted
+alphabetically with `sorted()`:
+
+```python
+print(sorted(colors))
+```
+
+Keys don't have to be strings, but they need to be immutable objects. However, 
+Python expects string keys&mdash;so much so that you can omit quotes for key 
+names if they conform to variable name conventions:
+
+```python
+colors = {red = (255, 0, 0), green = (0, 255, 0), blue = (0, 0, 255)}
+```
+
+You can also use the `dict()` constructor with a list of tuples to create your
+dictionary:
+
+```python
+colors = dict([('red', (255, 0, 0)), ('green', (0, 255, 0)), ('blue', (0, 0, 255))])
 
 <!--
 ----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
