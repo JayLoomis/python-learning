@@ -197,7 +197,17 @@ if 'lime' not in colors:
     print('Oh, yeah, we deleted that!')
 ```
 
-Trying to access a key that doesn't exist results in a `KeyError` exception.
+Trying to access a key that doesn't exist results in a `KeyError` exception. One way to avoid this is to check membership, but you can also use the `get()` method:
+
+```python
+magentaRGB = colors.get('magenta')
+
+# Now magentaRGB == none, or you can shortcut further:
+
+oliveRGB = colors.get('olive', 'color undefined')
+
+# Now magentaRGB == 'color undefined'
+```
 
 Even though dictionaries are unsorted, you can get a list of the keys sorted
 alphabetically with `sorted()`:
