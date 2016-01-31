@@ -1,5 +1,12 @@
 # Python quick notes #
 
+## Contents ##
+
+-   [Operators][#operators]
+-   [Sets][#sets]
+-   [Loops][#loops]
+-   [Dictionaries][#dictionaries]
+
 ## Operators ##
 
 ### Mathematical ##
