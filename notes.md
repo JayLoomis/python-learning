@@ -32,6 +32,43 @@ logicand = x and y
 logicor  = x or y
 logicneg = x not y
 ```
+## Basic I/O ##
+
+When writing console applications, you can use `input()` and `print()` for input
+and output.
+
+The `input` function permits you to include a prompt string as its parameter:
+
+```python
+try:
+    user_int = int(input('Enter an integer: '))
+except ValueError:
+    print('That wasn\'t an integer!')
+```
+
+The `print` function is pretty straightforward&mdash;it prints a string to
+the console. By default, `print` ends whatever string you specify with a newline
+character so that each print call starts its output on a new line. You can 
+specify a different set of characters to end the output with y using the `end`
+parameter:
+
+```python
+for i in range(10):
+    print(i, end=', ')
+else:
+    print(10)
+```
+
+Which produces this output:
+
+```
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+>>>
+```
+
+<!--
+----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+-->
 ## Control structures ##
 
 ### if, etc. ###
