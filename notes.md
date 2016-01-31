@@ -2,10 +2,10 @@
 
 ## Contents ##
 
--   [Operators][#operators]
--   [Sets][#sets]
--   [Loops][#loops]
--   [Dictionaries][#dictionaries]
+-   [Operators](#operators)
+-   [Sets](#sets)
+-   [Loops](#loops)
+-   [Dictionaries](#dictionaries)
 
 ## Operators ##
 
