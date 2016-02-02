@@ -3,6 +3,7 @@
 ## Contents ##
 
 -   [Operators](#operators)
+-   [Tuples](#tuples)
 -   [Sets](#sets)
 -   [Loops](#loops)
 -   [Dictionaries](#dictionaries)
@@ -130,6 +131,30 @@ to do something with the iteration variable.
 <!--
 ----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
 -->
+
+## Tuples ##
+
+The faster type of arbitrary collection in Python, tuples are immutable, 
+ordered, iterable lists of arbitrary objects.
+
+```python
+coords = (23, 42)
+
+coords[1] == 42 # True
+
+coords[1] = 56 # Raises a TypeError
+```
+
+Even though they are immutable, tuples can contain mutable values:
+
+```python
+color_scheme = ([0, 0, 120], [255, 255, 0], [100, 180, 76])
+
+color_scheme[0][0] = 255 # Works fine!
+
+color_scheme[0] = [255, 0, 120] # TypeError
+```
+
 ## Sets ##
 
 A set is a special kind of collection that you can use for set comparison 
@@ -279,6 +304,20 @@ colors = dict([('red', (255, 0, 0)), ('green', (0, 255, 0)), ('blue', (0, 0, 255
 <!--
 ----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
 -->
+## Using wildcards in filenames (glob) ##
+
+The `glob` library supports wildcard expansion for filenames:
+
+```python
+import glob
+
+my_path = 'C:/*.sys'
+
+# Let's print all the .sys files in the root directory.
+for filename inglob.glob(my_path):
+    print(filename)
+```
+
 ## Multiple assignment ##
 
 It isn't always how you might think it will work.
