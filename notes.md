@@ -237,6 +237,15 @@ metro.remove(360)
 metro.remove(253)
 ```
 
+Here's a handy trick:
+
+```python
+my_big_list = [0] * 100
+```
+
+The multiplication operator is overloaded to, in this case, create a big list 
+that is 100 items matching the item listed.
+
 ## Dictionaries ##
 
 Unordered key-value pairs
