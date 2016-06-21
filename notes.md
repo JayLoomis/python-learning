@@ -30,7 +30,9 @@ from __future__ import division
 x > y
 x < y
 x == y
-X != y
+x != y
+x >= y
+x <= y
 ```
 
 ### Logical ###
