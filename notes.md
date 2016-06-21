@@ -3,10 +3,18 @@
 ## Contents ##
 
 -   [Operators](#operators)
--   [Tuples](#tuples)
--   [Sets](#sets)
--   [Loops](#loops)
--   [Dictionaries](#dictionaries)
+    -    [Mathematical](#mathematical)
+    -    [Relational](#relational)
+    -    [Logical](#logical)
+-   [Basic I/O](#basic-i-o)
+-   [Control structures](#control-structures)
+    -   [if, etc.](#if-etc-)
+    -   [Loops](#loops)
+-   [Collection types](#collection-types)
+    -   [Tuples](#tuples)
+    -   [Sets](#sets)
+    -   [Lists](#lists)
+    -   [Dictionaries](#dictionaries)
 
 ## Operators ##
 
@@ -134,7 +142,10 @@ to do something with the iteration variable.
 ----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
 -->
 
-## Tuples ##
+## Collection types ##
+One of Python's strengths is its support for a lot of collection types.
+
+### Tuples ###
 
 The faster type of arbitrary collection in Python, tuples are immutable, 
 ordered, iterable lists of arbitrary objects.
@@ -157,7 +168,7 @@ color_scheme[0][0] = 255 # Works fine!
 color_scheme[0] = [255, 0, 120] # TypeError
 ```
 
-## Sets ##
+### Sets ###
 
 A set is a special kind of collection that you can use for set comparison 
 operations. Python supports both `set` and `frozenset`, the the latter of which 
@@ -196,7 +207,7 @@ dictionary. Instead, you create an empty set with the `set` constructor:
 ```python
 newset = set()
 ```
-## Lists ##
+### Lists ###
 
 More or less the default collection type in Python. Mutable, ordered, but slower
 than a tuple.
@@ -248,7 +259,7 @@ my_big_list = [0] * 100
 The multiplication operator is overloaded to, in this case, create a big list 
 that is 100 items matching the item listed.
 
-## Dictionaries ##
+### Dictionaries ###
 
 Unordered key-value pairs
 
@@ -311,7 +322,7 @@ dictionary (but this is generally considered less pythonic):
 colors = dict([('red', (255, 0, 0)), ('green', (0, 255, 0)), ('blue', (0, 0, 255))])
 ```
 
-### Dictionary unpacking ###
+#### Dictionary unpacking ####
 Python has a magical mechanism in place to assemble the arguments for a function
 in a dictionary:
 
