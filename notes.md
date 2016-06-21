@@ -15,6 +15,7 @@
     -   [Sets](#sets)
     -   [Lists](#lists)
     -   [Dictionaries](#dictionaries)
+-   [String formatting](#string-formatting)
 
 ## Operators ##
 
@@ -517,6 +518,37 @@ names2 = ['Francis', 'Robert', 'Harold', 'Egbert']
 # Now let's find every name in the second list that's not in the first!
 names2exclusive = [name for name in names2 if name not in names1]
 ```
+
+### String formatting ###
+In addition to easy formatting:
+
+```python
+theAnswer = 42
+theStatement = '{} is the answer to life, the universe, and everything'.format(theAnswer)
+
+# OR
+
+foods = ['Spam', 'egg', 'bacon']
+menuItem = '{0}, {1}, {0}, {0}, {2}, and {0}'.format(food[0], food[1], food[2])
+```
+
+Python supports a more complicated string formatting system, based on C-style 
+string formatting (ala `sprintf`)
+
+```python
+theAnswer = 42
+theStatement = '%d is the answer to life, the universe, and everything' % (theAnswer)
+```
+
+You can use this formatting to bulk format and make a list:
+
+```python
+someNums = range(33, 51)
+myFilenames = ['jel-log%d.txt' % num for num in someNums]
+```
+
+Notice the similarity in form to list comprehension (I bet this is considered
+simple list comprehension, though it seems like an advanced edge case to me).
 
 <!--
 ----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
