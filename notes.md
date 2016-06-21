@@ -303,12 +303,36 @@ colors = {red = (255, 0, 0), green = (0, 255, 0), blue = (0, 0, 255)}
 ```
 
 You can also use the `dict()` constructor with a list of tuples to create your
-dictionary:
+dictionary (but this is generally considered less pythonic):
 
 ```python
 colors = dict([('red', (255, 0, 0)), ('green', (0, 255, 0)), ('blue', (0, 0, 255))])
 ```
 
+### Dictionary unpacking ###
+Python has a magical mechanism in place to assemble the arguments for a function
+in a dictionary:
+
+First, you make a dictionary with its labels named the same as the arguments of 
+the function you're collecting them for:
+
+```python
+argDict = {'first':'Scoobert', 'last':'Doo', 'species':'canis lupus familiaris'}
+```
+
+Then you call the function, passing the dictionary's name as the argument, 
+preceded by the special `**` operator:
+
+```python
+def printCritter(first, last, species):
+    print('First name: {}'.format(first))
+    print('Last name: {}'.format(last))
+    print('Species: {}'.format(species))
+    
+...
+
+printCritter(**argDict)
+```
 
 <!--
 ----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
