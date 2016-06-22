@@ -531,6 +531,11 @@ theStatement = '{} is the answer to life, the universe, and everything'.format(t
 foods = ['Spam', 'egg', 'bacon']
 menuItem = '{0}, {1}, {0}, {0}, {2}, and {0}'.format(food[0], food[1], food[2])
 ```
+Note&nbsp;&nbsp;When using an identifier with string formatting, it needn't be
+confined to an index as it is in the example above. You can provide any valid
+identifier, and then specify them in the args to `format()` just like finction
+params. `'Welcome {username}! Your session id is {session}.',format(username='sdoo', session='42')`
+I wonder if you can use dictionary unpacking here (I bet you can!).
 
 Python supports a more complicated string formatting system, based on C-style 
 string formatting (ala `sprintf`)
