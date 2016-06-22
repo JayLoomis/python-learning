@@ -108,6 +108,19 @@ each branch, would cause errors.
 Sadly, there is no case statement. Just use multiple `elif` clauses to do what
 you need to.
 
+#### Inline if ####
+You can use if as an expression instead of a statement, which ends up being 
+like the ternary operator in C and other languages.
+
+```python
+# Let's say there's a variable that might be populated, but might not.
+returnCode = None # Later this might get set, depending on async stuff
+print('Code: {}.'.format(returnCode) if returnCode else 'No return code yet')
+```
+
+As with ternary operators in all languages, only use it when it avoids code
+clutter to a degree that outweighs its potential to confuse.
+
 ### Loops ###
 
 ```python
