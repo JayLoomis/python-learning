@@ -535,7 +535,7 @@ Note&nbsp;&nbsp;When using an identifier with string formatting, it needn't be
 confined to an index as it is in the example above. You can provide any valid
 identifier, and then specify them in the args to `format()` just like finction
 params. `'Welcome {username}! Your session id is {session}.',format(username='sdoo', session='42')`
-I wonder if you can use dictionary unpacking here (I bet you can!).
+You can use [dictionary unpacking here](#dictionary-unpacking) here, too!
 
 Python supports a more complicated string formatting system, based on C-style 
 string formatting (ala `sprintf`)
