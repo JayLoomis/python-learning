@@ -17,6 +17,31 @@
     -   [Dictionaries](#dictionaries)
 -   [String formatting](#string-formatting)
 
+<!--
+----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+-->
+## Preliminaries ##
+Python is at once an easy language to pick up and an incredibly deep one to use.
+It consistently tries to be both readable and clever, which causes a fair amount
+of dissonance. 
+
+### Versions ###
+Python has been split for quite a while into two release branches, 2.7.x and 3.x.
+Python 3 was created as a bit of a refactoring to better handle some things
+about how the language worked. Bu by the time they got around to making 3, there
+was an enormous amount of code written against the "old-style" Python. Adoption
+has been slow going, partly because there are so many little packages out there 
+don't support 3.x for one reason or another. 
+
+I've written this guide with 3.x in mind, but in places I'll point out something
+that varies between the the versions. You can often get the newer version
+even while using 2.7.x by using `from __future__ import [something]`. For 
+example, you might call `from __future__ import division` to enable real 
+division (int / int = float).
+
+### Style ###
+Readability is a big part of Python. The style for Python code is defined in [PEP (Python enhancement proposal) 8](https://www.python.org/dev/peps/pep-0008/).
+
 ## Operators ##
 
 ### Mathematical ##
