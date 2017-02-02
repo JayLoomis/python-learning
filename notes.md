@@ -557,6 +557,54 @@ names2 = ['Francis', 'Robert', 'Harold', 'Egbert']
 names2exclusive = [name for name in names2 if name not in names1]
 ```
 
+And you can do other tricky things besides finding sublists inside lists:
+
+#### Create a list from a template and an index number
+
+Sometimes you want to name a series of things with a name and an incremental
+number, like 'file-1', 'file-2', ... 'file-n'. List comprehensions make this
+ridiculously easy:
+
+```python
+files1to10 = ['somefilename-{}.txt'.format(i) for i in range(1, 11)]
+```
+
+#### Create matrices
+
+Here's a problem: you want to make a matrix (a 2-d array). How would you do it?
+
+You can try to take advantage of the handy listifying overload of the asterisk,
+like this:
+
+```Python
+tictacboard = [[0] * 3] * 3
+```
+
+That should give you a list of eight lists, each with eight zeros. If you look
+at the string representation, it looks like everything worked.
+
+```
+>>> tictacboard
+[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+```
+But if your try to set a single position, you get some trouble.
+
+```Python
+>>> tictacboard[1][1] = 'x'
+>>> tictacboard
+[[0, 'x', 0], [0, 'x', 0], [0, 'x', 0]]
+```
+
+What the heck? Let's think about how Python variables work in order to puzzle this out. We know that `[0] * 3` gives us a three-element list populated with zeros. But when you try to use * to make copies of a list it doesn't work. This is because [0] is a list containing a numeric literal, while [[0] *  n] 
+
+
+```Python
+chessboard = [[0] * 8 for i in range(8)]
+```
+
+<!--
+----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+-->
 ### String formatting ###
 In addition to easy formatting:
 
