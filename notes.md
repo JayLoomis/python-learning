@@ -60,14 +60,15 @@ from __future__ import division
 ```
 ### Relational ###
 
-```python
-x > y
-x < y
-x == y
-x != y
-x >= y
-x <= y
-```
+| Operation           | Example   |
+| ------------------- | --------- |
+| Greater than        | `x > y`   |
+| Less than           | `x < y`   |
+| Equal to            | `x == y`  |
+| Not equal to        | `x != y`  |
+| Greater or equal to | `x >= y`  |
+| Lees or equal to    | `x <= y`  |
+
 
 ### Logical ###
 
