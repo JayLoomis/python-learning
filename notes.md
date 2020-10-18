@@ -60,14 +60,14 @@ from __future__ import division
 ```
 ### Relational ###
 
-| Operation           | Example   |
-| ------------------- | --------- |
-| Greater than        | `x > y`   |
-| Less than           | `x < y`   |
-| Equal to            | `x == y`  |
-| Not equal to        | `x != y`  |
-| Greater or equal to | `x >= y`  |
-| Lees or equal to    | `x <= y`  |
+| Operation           | Example   | x = 10, y = 4 | x = 4, y = 10 | x = "Z", y = "Z" |
+| ------------------- | --------- | ------------- | ------------- | ---------------- |
+| Greater than        | `x > y`   | `True`        | `False`       | `False`          |
+| Less than           | `x < y`   | `False`       | `True`        | `False`          |
+| Equal to            | `x == y`  | `False`       | `False`       | `True`           |
+| Not equal to        | `x != y`  | `True`        | `True`        | `False`          |
+| Greater or equal to | `x >= y`  | `True`        | `False`       | `True`           |
+| Lees or equal to    | `x <= y`  | `False`       | `True`        | `True`           |
 
 
 ### Logical ###
