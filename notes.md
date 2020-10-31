@@ -357,11 +357,19 @@ regional = [206, 425, 253, 360]
 
 metro = regional[:]
 # OR
+metro = []
 metro.extend(regional)
 
 metro.remove(360)
 metro.remove(253)
 ```
+
+<!--
+----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+-->
+
+Strangely, `metro = list().extend(regional)` doesn't cause an error, but results
+in `metro` being created and set to `None`. Not even to an empty list?
 
 Here's a handy trick:
 
