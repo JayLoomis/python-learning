@@ -46,15 +46,15 @@ Readability is a big part of Python. The style for Python code is defined in [PE
 
 ### Mathematical ###
 
-| Operation          | Operator | Notes                                  |
-| ------------------ | -------- | -------------------------------------- |
-| Addition           | `+`      | Also used for concatenation of strings |
-| Subtraction        | `-`      |                                        |
-| Multiplication     | `*`      |                                        |
-| Division           | `/`      | Resolves to a `float`                  |
-| Floor division     | `//`     | Resolves to `int`. No remainder given. |
-| Remainder division | `%`      | Resolves to modulo.                    |
-| Raise to power     | `**`     | `x ** y` is x to the power of y.       |
+| Operation          | Operator | Notes                                   |
+| ------------------ | -------- | --------------------------------------- |
+| Addition           | `+`      | Also used for concatenation of strings. |
+| Subtraction        | `-`      |                                         |
+| Multiplication     | `*`      |                                         |
+| Division           | `/`      | Resolves to a `float`.                  |
+| Floor division     | `//`     | Resolves to `int`. No remainder given.  |
+| Remainder division | `%`      | Resolves to modulo.                     |
+| Raise to power     | `**`     | `x ** y` is x to the power of y.        |
 
 Python also provides built-ins for some math functions. These are called like
 functions, but share a lot in common with operators.
