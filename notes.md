@@ -148,42 +148,78 @@ Which produces this output:
 >>>
 ```
 
-<!--
-----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
--->
 ## Control structures ##
 
-### if, etc. ###
+### Branching ###
+
+#### if statement ####
+The `if` statement, along with its permutations, is the only branching control
+supported in Python. The lack of a switch statement is one of the tragedies of
+Python, IMO. Here's the if:
 
 ```python
 if x == y:
     # do a thing
+    pass
 elif x > y:
     # do another thing
+    pass
 else:
     # do the default thing
+    pass
 ```
 
 Note that `pass` is a keyword that you can use if you want to set up a code
-branch that doesn't do anything yet. The example above, with only comments in 
-each branch, would cause errors.
-
-Sadly, there is no case statement. Just use multiple `elif` clauses to do what
-you need to.
+branch that doesn't do anything yet. Using it as above lets you run your
+code without errors, because normally, Python requires there to be code in a
+defined block.
 
 #### Inline if ####
-You can use if as an expression instead of a statement, which ends up being 
-like the ternary operator in C and other languages.
+
+You can use `if` as an expression instead of a statement, which ends up being 
+like the ternary operator in C and other languages:
 
 ```python
 # Let's say there's a variable that might be populated, but might not.
-returnCode = None # Later this might get set, depending on async stuff
-print('Code: {}.'.format(returnCode) if returnCode else 'No return code yet')
+returnCode = None # Later this might get set, depending on async stuff.
+do_some_stuff("...")
+print('Code: {}.'.format(returnCode) if returnCode else "No return code yet.")
 ```
 
 As with ternary operators in all languages, only use it when it avoids code
 clutter to a degree that outweighs its potential to confuse.
 
+#### Value or ####
+
+The inline `if` example in the previous section is pretty verbose. For complex
+apllications, it adds a lot of text to a statement. To simplify one of the most
+common uses, Python overloads the `or` operator. When you use `or` in cases
+where on or both operands are not Boolean values, the expression resolves to
+the left value, if that value is non zero, or to the right value if it is. Some
+examples:
+
+```python
+empty_int = 0
+empty_str = ""
+empty_list = []
+unreferenced_var = None
+
+my_number = empty_int or 33
+my_number == 33
+
+my_string = empty_str or "Hubbub"
+my_string == "Hubbub"
+
+my_list = empty_list or [4, 6, 8, 10, 12, 20]
+my_list == [4, 6, 8, 10, 12, 20]
+
+my_ref = unreferenced_var or my_number
+my_ref is my_number == True
+```
+
+<!--
+----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+-->
 ### Loops ###
 
 ```python
