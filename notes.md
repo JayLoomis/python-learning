@@ -44,30 +44,67 @@ Readability is a big part of Python. The style for Python code is defined in [PE
 
 ## Operators ##
 
-### Mathematical ##
+### Mathematical ###
 
-These are as you'd expect, including the C-style modulo (`%`).
+| Operation          | Operator | Notes                                  |
+| ------------------ | -------- | -------------------------------------- |
+| Addition           | `+`      | Also used for concatenation of strings |
+| Subtraction        | `-`      |                                        |
+| Multiplication     | `*`      |                                        |
+| Division           | `/`      | Resolves to a `float`                  |
+| Floor division     | `//`     | Resolves to `int`. No remainder given. |
+| Remainder division | `%`      | Resolves to modulo.                    |
+| Raise to power     | `**`     | `x ** y` is x to the power of y.       |
 
-Except that 'raise to the power of' is `**` not `^`.
+Python also provides built-ins for some math functions. These are called like
+functions, but share a lot in common with operators.
 
-There's also 'interger divide' (`//`) which returns an integer without 
-remainder. This is always needed to get such a result in 3.x, but is the default
-behavior for `/` in 2.x. However, you can get 3.x-style behavior in 2.x by 
-using:
+| Operation           | Built-in        | Notes                                      |
+| ------------------- | --------------- | ------------------------------------------ |
+| Absolute value      | `abs(x)`        | Returns the absolute value of `x`.         |
+| Divide with modulus | `divmod(x, y)`  | Returns a tuple: `(x / y, x % y)`.         |
+| Raise to power      | `pow(x, y[,z])` | Equivalent to `(x ** y)[% z]`, but faster. |
 
-```python
-from __future__ import division
-```
+### Bitwise ###
+
+Bitwise operations are only valid with `int` data.
+
+| Operation | Operator         | Example<sup>1</sup>                    |
+| --------- | ---------------- | -------------------------------------- |
+| And       | `&`              | `0b00110011 & 0b01010101 == 00010001`  |
+| Or        | `|`              | `0b00110011 | 0b01010101 == 01110111`  |
+| ExOr      | `^`              | `0b00110011 ^ 0b01010101 == 01100110`  |
+| Invert    | `~`              | `~0b00110011 == 11001100`              |
+| L shift   | `<<`<sup>2</sup> | `0b1100 << 2 == 0b0011 (3 << 2 == 12)` |
+| R shift   | `>>`<sup>3</sup> | `0b0011 >> 1 == 0b0110 (12 >> 1 == 6)` |
+
+<!--
+----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+-->
+
+<sup>1</sup> Examples use 8-bit values for readability. Python integers are
+complicated in their implementation, with no practical maximum value, but always
+much larger than 8 bits.
+
+<sup>2</sup> Through the magic of Python, you can shift integers up to basically
+infinite values without affecting the sign. Don't worry about it, just let it be.
+
+<sup>3</sup> Remember that shifting down drops bits off the end, so `3 >> 1` is
+equivalent to `3 // 2` not `3 / 2`.
+
+But, really, what are you doing bitwise operations in Python for in
+the first place?!
+
 ### Relational ###
 
-| Operation           | Example   | x = 10, y = 4 | x = 4, y = 10 | x = "Z", y = "Z" |
-| ------------------- | --------- | ------------- | ------------- | ---------------- |
-| Greater than        | `x > y`   | `True`        | `False`       | `False`          |
-| Less than           | `x < y`   | `False`       | `True`        | `False`          |
-| Equal to            | `x == y`  | `False`       | `False`       | `True`           |
-| Not equal to        | `x != y`  | `True`        | `True`        | `False`          |
-| Greater or equal to | `x >= y`  | `True`        | `False`       | `True`           |
-| Lees or equal to    | `x <= y`  | `False`       | `True`        | `True`           |
+| Operation           | Operator | Example   | x = 10, y = 4 | x = 4, y = 10 | x = "Z", y = "Z" |
+| ------------------- | -------- | --------- | ------------- | ------------- | ---------------- |
+| Greater than        | `>`      | `x > y`   | `True`        | `False`       | `False`          |
+| Less than           | `<`      | `x < y`   | `False`       | `True`        | `False`          |
+| Equal to            | `==`     | `x == y`  | `False`       | `False`       | `True`           |
+| Not equal to        | `!=`     | `x != y`  | `True`        | `True`        | `False`          |
+| Greater or equal to | `>=`     | `x >= y`  | `True`        | `False`       | `True`           |
+| Lees or equal to    | `<=`     | `x <= y`  | `False`       | `True`        | `True`           |
 
 
 ### Logical ###
