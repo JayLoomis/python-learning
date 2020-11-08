@@ -42,6 +42,24 @@ Or you can use the `get()` method:
 fugitive_id = prisoner.get("id")
 ```
 
+## Tips and tricks ##
+
+### Getting a random item ###
+
+You can't use `random.choice()` directly to get an item, key, or value. But that
+doesn't mean you can't use it! You have to first cast the view that you want as
+a list:
+
+```python
+city_info = {"New York": {"State": "New York", "County": "New York"},
+             "Los Angeles": {"State": "California", "County": "Los Angeles"},
+             "Chicago": {"State": "Illinois", "County": "Cook"},
+             "Houston": {"State": "Texas", "County": "Harris"},
+             "Phoenix": {"State": "Arizona", "County": "Maricopa"}}
+
+random_city = random.choice(list(city_info.keys()))
+```
+        
 
 
 
