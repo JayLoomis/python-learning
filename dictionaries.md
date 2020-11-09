@@ -42,6 +42,27 @@ Or you can use the `get()` method:
 fugitive_id = prisoner.get("id")
 ```
 
+## Getting list views of dictionaries ##
+There are built-in methods that return iterable views of the contents of a 
+dictionary.
+
+Let's use this dictionary:
+
+```python
+student = {"last_name": "Cat",
+           "first_name": "Stimpson",
+           "id": 293875}
+```
+
+### To get the keys
+
+```python
+my_keys = student.keys()
+
+# An iterable view has a lot of restrictions, so it's often useful to cast it as
+#  a list.
+print(list(my_keys))
+
 ## Tips and tricks ##
 
 ### Getting a random item ###
