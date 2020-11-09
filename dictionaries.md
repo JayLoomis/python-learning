@@ -54,6 +54,10 @@ student = {"last_name": "Cat",
            "id": 293875}
 ```
 
+**Important :** Don't forget that dictionaries are unordered. In the follwing 
+examples, I've given outputs in order. That might be what you get, but you can't
+count on it!
+
 ### To get the keys
 
 ```python
@@ -62,6 +66,32 @@ my_keys = student.keys()
 # An iterable view has a lot of restrictions, so it's often useful to cast it as
 #  a list.
 print(list(my_keys))
+
+>>> ['last_name', 'first_name', 'id']
+```
+
+### To get the values
+
+```python
+my_keys = student.values()
+
+print(list(my_keys))
+
+>>> ['Cat', 'Stimpson', 293875]
+```
+
+### To get the keys and values
+
+```python
+my_keys = student.items()
+
+for i in my_keys:
+    print(i[0] + " : " + i[1])
+
+>>> last_name : Cat
+    first_name : Stimpson
+    id : 293875
+```
 
 ## Tips and tricks ##
 
