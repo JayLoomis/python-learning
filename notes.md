@@ -364,9 +364,6 @@ metro.remove(360)
 metro.remove(253)
 ```
 
-<!--
-----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
--->
 
 Strangely, `metro = list().extend(regional)` doesn't cause an error, but results
 in `metro` being created and set to `None`. Not even to an empty list?
@@ -379,6 +376,58 @@ my_big_list = [0] * 100
 
 The multiplication operator is overloaded to, in this case, create a big list 
 that is 100 items matching the item listed.
+
+#### List enumeration ####
+
+The default behavior of the `for` loop in Python is designed to enumerate a list
+or other iterable object.
+
+```python
+for thing in things:
+    print(thing)
+```
+
+This works great and is very readable when what you need is just the value of
+each element as you iterate through the list. Sometimes, though, you need to
+access the index so that you can do offset math to access other elements in
+the list. The simplest way to do that is to iterate through a range set to the
+length of the list:
+
+```python
+for i in range(len(things)):
+    if i != 0:
+        if things[i] > things[i - 1]:
+            print("{} is greater than {}.".format(things[i], things[i - 1]))
+        elif things[i] < things[i - 1]:
+            print("{} is less than {}.".format(things[i], things[i - 1]))
+        else:
+            print("{} is equal to {}.".format(things[i], things[i - 1]))
+```
+
+That approach is a bit less readable that ideal. So Python includes the
+built-in function `enumerate`, which returns a list of two-element tuples, the
+first element of which contains the index, and the second contains the element
+of the original list.
+
+```python
+for i, thing in enumerate(things):
+    if i != 0:
+        if thing > things[i - 1]:
+            print("{} is greater than {}.".format(thing, things[i - 1]))
+        if thing < things[i - 1]:
+            print("{} is less than {}.".format(thing, things[i - 1]))
+        else:
+            print("{} is equal to {}.".format(thing, things[i - 1]))
+```
+
+In this example, it's maybe not significantly easier to follow, but every little
+bit counts!
+
+<!--
+----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+-->
+
+
 
 ### Dictionaries ###
 
