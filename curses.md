@@ -30,6 +30,16 @@ enables you to make complex user interfaces. The easiest way to get started is
 to focus just on the essentials. You can very easily get to a state where you
 can put text where you want it on the screen.
 
+## Reference ##
+### Terminal Options ###
+
+Most of the top-level functions in the curses module are for setting options for the way the terminal behaves.
+
+<table>
+  <th>
+         <td> </td>
+  </th>
+</table>
 <!--
          10        20        30        40        50        60        70        80
     \    |    \    |    \    |    \    |    \    |    \    |    \    |    \    |
